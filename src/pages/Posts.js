@@ -17,7 +17,7 @@ function Posts(){
 
     return(
         <>
-            <div>Posts list</div>
+            <div className={"mb-10 text-2xl"}>Posts list</div>
             <PostsList onDelete={removePost} values={posts}/>
         </>
     );

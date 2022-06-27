@@ -7,7 +7,7 @@ import ImageOutput from "../components/ImageOutput";
 import DateOutput from "../components/DateOutput";
 import ContentOutput from "../components/ContentOutput";
 
-function Post({match}){
+function Post(){
     const {id} = useParams();
     const post = useSelector(selectId(id))
 

@@ -1,6 +1,6 @@
 import {Children, cloneElement, isValidElement, useEffect, useRef, useState} from "react";
 
-const Map = ({center,  zoom, onClick, children})  => {
+const Map = ({center,  zoom, onClick, children, style})  => {
     const ref = useRef();
     const [map, setMap] = useState(null)
 
@@ -30,7 +30,7 @@ const Map = ({center,  zoom, onClick, children})  => {
     }, [map, onClick]);
 
     return (
-        <div ref={ref} id="map" style={{height: '500px'}}>
+        <div ref={ref} id="map" style={{height: '500px', ...style}}>
             {Children.map(children, (child) => {
                 if (isValidElement(child)) {
                     return cloneElement(child, {map});
