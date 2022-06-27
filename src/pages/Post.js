@@ -2,19 +2,22 @@ import {useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {selectId} from "../store/reducer";
 import MapWrapper from "../components/MapWrapper";
+import TitleOutput from "../components/TitleOutput";
+import ImageOutput from "../components/ImageOutput";
+import DateOutput from "../components/DateOutput";
+import ContentOutput from "../components/ContentOutput";
 
 function Post({match}){
     const {id} = useParams();
     const post = useSelector(selectId(id))
 
-
-    console.log(post)
-    return(<div className={"text-center"}>
-            <h1 className={"text-5xl mb-10"}>{post.title}</h1>
-            <div className={"mb-2"}>
-                {post.image ? <img src={post.image} className={"mx-auto text-center max-w-md h-auto"}/> : null}
-            </div>
-            <h2>{post.content}</h2>
+    //console.log(post)
+    return(
+        <div className={"text-center"}>
+            <TitleOutput value={post.title}/>
+            <ImageOutput value={post.image}/>
+            <DateOutput value={post.date}/>
+            <ContentOutput value={post.content}/>
             <MapWrapper markers={[post]}/>
         </div>
     );
