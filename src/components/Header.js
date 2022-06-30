@@ -9,7 +9,7 @@ const Header = () => {
                 <Link to={"/posts"}><FiMenu/></Link>
             </div>
             <div className={"flex-1 text-center"}>
-                <Link to={"/"} className={"h-1"}>Fancia's adventure book</Link>
+                <Link to={"/"} className={"h-1"}>Fancia's adventure book - s18425</Link>
             </div>
             <div className={"flex-none"}>
                 <Link to={"/post"}><FiPlusCircle/></Link>
